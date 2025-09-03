@@ -67,7 +67,7 @@
         ],
         "options": {
           "buildTarget": "@jobber/jobber-auth:build",
-          "runBuildTargetDependencies": false
+          "runBuildTargetDependencies": true
         },
         "configurations": {
           "development": {
