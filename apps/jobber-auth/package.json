@@ -20,7 +20,9 @@
             ]
           }
         },
-        "dependsOn": ["generate-types"]
+        "dependsOn": [
+          "generate-types"
+        ]
       },
       "prune-lockfile": {
         "dependsOn": [
@@ -90,9 +92,9 @@
         }
       },
       "test": {
-        "options": {
-          "passWithNoTests": true
-        }
+        "dependsOn": [
+          "generate-types"
+        ]
       },
       "docker:build": {
         "dependsOn": [
