@@ -19,7 +19,8 @@
               "--node-env=development"
             ]
           }
-        }
+        },
+        "dependsOn": ["generate-types"]
       },
       "prune-lockfile": {
         "dependsOn": [
@@ -73,6 +74,19 @@
           "production": {
             "buildTarget": "@jobber/jobber-auth:build:production"
           }
+        }
+      },
+      "generate-types": {
+        "command": "prisma generate",
+        "options": {
+          "cwd": "apps/jobber-auth"
+        }
+      },
+      "migrate-prisma": {
+        "command": "prisma migrate dev --name",
+        "_comment": "example use: nx migrate-prisma -- user_table",
+        "options": {
+          "cwd": "apps/jobber-auth"
         }
       },
       "test": {
