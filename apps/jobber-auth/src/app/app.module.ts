@@ -13,6 +13,11 @@ import { GqlContext } from '@jobber/nestjs';
     PrismaModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      playground: {
+        settings: {
+          'request.credentials': 'include', // include cookies in requests
+        },
+      },
       context: ({ req, res }: GqlContext) => ({ req, res }), //for access inside later on like auth resolver
       autoSchemaFile: true,
     }),
