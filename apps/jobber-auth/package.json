@@ -21,7 +21,8 @@
           }
         },
         "dependsOn": [
-          "generate-types"
+          "generate-prisma",
+          "generate-ts-proto"
         ]
       },
       "prune-lockfile": {
@@ -78,28 +79,37 @@
           }
         }
       },
-      "generate-types": {
-        "command": "prisma generate",
-        "options": {
-          "cwd": "apps/jobber-auth"
-        }
-      },
-      "migrate-prisma": {
-        "command": "prisma migrate dev --name",
-        "_comment": "example use: nx migrate-prisma -- user_table",
-        "options": {
-          "cwd": "apps/jobber-auth"
-        }
-      },
       "test": {
         "dependsOn": [
-          "generate-types"
+          "generate-prisma"
         ]
       },
       "docker:build": {
         "dependsOn": [
           "build",
           "prune"
+        ]
+      },
+      "generate-prisma": {
+        "command": "prisma generate",
+        "options": {
+          "cwd": "{projectRoot}",
+          "input": [
+            "prisma/schema.prisma"
+          ]
+        },
+        "cache": true
+      },
+      "migrate-prisma": {
+        "command": "prisma migrate dev --name",
+        "_comment": "example use: nx migrate-prisma -- user_table",
+        "options": {
+          "cwd": "{projectRoot}"
+        }
+      },
+      "generate-ts-proto": {
+        "command": [
+          "nx generate-ts-proto"
         ]
       }
     }
