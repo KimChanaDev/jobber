@@ -4,13 +4,7 @@
   "include": [],
   "references": [
     {
-      "path": "../../libs/nestjs"
-    },
-    {
-      "path": "../../libs/pulsar"
-    },
-    {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.lib.json"
     },
     {
       "path": "./tsconfig.spec.json"

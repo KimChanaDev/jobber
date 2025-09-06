@@ -17,6 +17,15 @@
     },
     {
       "path": "./apps/jobber-jobs"
+    },
+    {
+      "path": "./libs/pulsar"
+    },
+    {
+      "path": "./apps/jobber-executer-e2e"
+    },
+    {
+      "path": "./apps/jobber-executer"
     }
   ]
 }

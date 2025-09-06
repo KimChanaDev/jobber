@@ -30,7 +30,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["libs/nestjs/*"]
+      "exclude": ["libs/nestjs/*", "libs/pulsar/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -54,7 +54,11 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/jobber-auth-e2e/**/*", "apps/jobber-jobs-e2e/**/*"]
+      "exclude": [
+        "apps/jobber-auth-e2e/**/*",
+        "apps/jobber-jobs-e2e/**/*",
+        "apps/jobber-executer-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/docker",
@@ -65,7 +69,7 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": ["libs/nestjs/*"],
+      "include": ["libs/nestjs/*", "libs/pulsar/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
